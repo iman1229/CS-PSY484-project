@@ -21,6 +21,14 @@ public class controllerHitLeft : MonoBehaviour
         {
             ScoreBehavior.UpdateScore(500);
         }
+        else if(collision.gameObject.name == "right")
+        {
+            UISelection.OnRightSelected();
+        }
+        else if(collision.gameObject.name == "left")
+        {
+            UISelection.OnLeftSelected();
+        }
         else
         {
             ScoreBehavior.UpdateScore(-250);

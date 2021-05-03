@@ -16,16 +16,30 @@ public class Launcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int launch = Random.Range(0, 1000);
-        if (launch == 1 || launch == 2 || launch == 4)
+        int rand = Random.Range(0, 1000);
+
+        if(rand == 1 || rand == 2 || rand == 3)
         {
             Rigidbody p = Instantiate(goodProjectile, transform.position, transform.rotation);
             p.velocity = transform.forward * speed;
         }
-        else if(launch == 3)
+        if(rand == 4)
         {
             Rigidbody p = Instantiate(badProjectile, transform.position, transform.rotation);
             p.velocity = transform.forward * speed;
         }
+       
+    }
+
+    public void LaunchGood()
+    {
+        Rigidbody p = Instantiate(goodProjectile, transform.position, transform.rotation);
+        p.velocity = transform.forward * speed;
+    }
+
+    public void LaunchBad()
+    {
+        Rigidbody p = Instantiate(badProjectile, transform.position, transform.rotation);
+        p.velocity = transform.forward * speed;
     }
 }
