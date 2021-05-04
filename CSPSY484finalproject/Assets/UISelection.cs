@@ -8,11 +8,13 @@ public class UISelection : MonoBehaviour
     public static string selection;
     public static bool testStart;
     public static Canvas input;
+    public Button left;
+    public Button right;
 
     // Start is called before the first frame update
     void Start()
     {
-   
+        input = GameObject.FindObjectOfType<Canvas>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class UISelection : MonoBehaviour
         selection = "Left";
         SideSelector.SetSide(selection);
         testStart = true;
-        input.enabled = false;
+        input.gameObject.SetActive(false);
     }
 
     public static void OnRightSelected()
@@ -35,6 +37,9 @@ public class UISelection : MonoBehaviour
         selection = "Right";
         SideSelector.SetSide(selection);
         testStart = true;
-        input.enabled = false;
+        input.gameObject.SetActive(false);
     }
+
+    
+    
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftSelect : MonoBehaviour
+public class RightSelect : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class LeftSelect : MonoBehaviour
 
     public void OnClick()
     {
-        UISelection.OnLeftSelected();
+        UISelection.OnRightSelected();
     }
 }

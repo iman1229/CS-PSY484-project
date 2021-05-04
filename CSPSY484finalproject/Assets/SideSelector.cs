@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SideSelector : MonoBehaviour
 {
-    private static List<Launcher> side;
+    public List<Launcher> Left;
+    public List<Launcher> Right;
+    public Launcher Both;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,85 +16,163 @@ public class SideSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(UISelection.testStart)
+        if(HealthBehavior.health > 0 && ScoreBehavior.score < 50)
         {
-            int output = Random.Range(0, 1000);
-            switch(output)
+            if (UISelection.testStart)
             {
-                case 0:
+                if (UISelection.selection == "Left")
+                {
+                    int output = Random.Range(0, 1000);
+                    switch (output)
                     {
-                        side[0].LaunchGood();
-                        break;
+                        case 0:
+                            {
+                                Left[0].LaunchGood();
+                                break;
+                            }
+                        case 1:
+                            {
+                                Left[1].LaunchGood();
+                                break;
+                            }
+                        case 3:
+                            {
+                                Both.LaunchGood();
+                                break;
+                            }
+                        case 4:
+                            {
+                                Left[0].LaunchGood();
+                                break;
+                            }
+                        case 5:
+                            {
+                                Left[1].LaunchGood();
+                                break;
+                            }
+                        case 6:
+                            {
+                                Both.LaunchGood();
+                                break;
+                            }
+                        case 7:
+                            {
+                                Left[0].LaunchBad();
+                                break;
+                            }
+                        case 8:
+                            {
+                                Left[1].LaunchBad();
+                                break;
+                            }
+                        case 9:
+                            {
+                                Both.LaunchBad();
+                                break;
+                            }
+                        case 10:
+                            {
+                                Right[0].LaunchGood();
+                                break;
+                            }
+                        case 11:
+                            {
+                                Right[0].LaunchBad();
+                                break;
+                            }
+                        case 12:
+                            {
+                                Right[1].LaunchGood();
+                                break;
+                            }
+                        case 13:
+                            {
+                                Right[1].LaunchBad();
+                                break;
+                            }
                     }
-                case 1:
+                }
+                else
+                {
+                    int rand = Random.Range(0, 1000);
+                    switch (rand)
                     {
-                        side[1].LaunchGood();
-                        break;
+                        case 0:
+                            {
+                                Right[0].LaunchGood();
+                                break;
+                            }
+                        case 1:
+                            {
+                                Right[1].LaunchGood();
+                                break;
+                            }
+                        case 3:
+                            {
+                                Both.LaunchGood();
+                                break;
+                            }
+                        case 4:
+                            {
+                                Right[0].LaunchGood();
+                                break;
+                            }
+                        case 5:
+                            {
+                                Right[1].LaunchGood();
+                                break;
+                            }
+                        case 6:
+                            {
+                                Both.LaunchGood();
+                                break;
+                            }
+                        case 7:
+                            {
+                                Right[0].LaunchBad();
+                                break;
+                            }
+                        case 8:
+                            {
+                                Right[1].LaunchBad();
+                                break;
+                            }
+                        case 9:
+                            {
+                                Both.LaunchBad();
+                                break;
+                            }
+                        case 10:
+                            {
+                                Left[0].LaunchGood();
+                                break;
+                            }
+                        case 11:
+                            {
+                                Left[0].LaunchBad();
+                                break;
+                            }
+                        case 12:
+                            {
+                                Left[1].LaunchGood();
+                                break;
+                            }
+                        case 13:
+                            {
+                                Left[1].LaunchBad();
+                                break;
+                            }
                     }
-                case 3:
-                    {
-                        if(side.Count >= 3)
-                        {
-                            side[2].LaunchGood();
-                        }
-                        break;
-                    }
-                case 4:
-                    {
-                        side[0].LaunchGood();
-                        break;
-                    }
-                case 5:
-                    {
-                        side[1].LaunchGood();
-                        break;
-                    }
-                case 6:
-                    {
-                        if (side.Count >= 3)
-                        {
-                            side[2].LaunchGood();
-                        }
-                        break;
-                    }
-                case 7:
-                    {
-                        side[0].LaunchBad();
-                        break;
-                    }
-                case 8:
-                    {
-                        side[1].LaunchBad();
-                        break;
-                    }
-                case 9:
-                    {
-                        if (side.Count >= 3)
-                        {
-                            side[2].LaunchBad();
-                        }
-                        break;
-                    }
+                }
+                
             }
         }
+        
     }
 
     public static void SetSide(string tag)
     {
-        GameObject[] sided = GameObject.FindGameObjectsWithTag(tag);
-        GameObject[] both = GameObject.FindGameObjectsWithTag("Both");
-        both.CopyTo(sided, sided.Length);
-        Launcher[] objects = GameObject.FindObjectsOfType<Launcher>();
-        foreach(Launcher thing in objects)
-        {
-            foreach(GameObject tagged in sided)
-            {
-                if(thing.gameObject.name == tagged.gameObject.name)
-                {
-                    side.Add(thing);
-                }
-            }
-        }
+       
         
 
     }

@@ -19,7 +19,7 @@ public class controllerHitLeft : MonoBehaviour
     {
         if (collision.gameObject.name.Contains("SquareTarget"))
         {
-            ScoreBehavior.UpdateScore(500);
+            ScoreBehavior.UpdateScore(1);
         }
         else if(collision.gameObject.name == "right")
         {
@@ -31,7 +31,7 @@ public class controllerHitLeft : MonoBehaviour
         }
         else
         {
-            ScoreBehavior.UpdateScore(-250);
+            HealthBehavior.UpdateHealth();
         }
     }
 }

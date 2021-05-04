@@ -7,19 +7,19 @@ public class controllerHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name.Contains("SquareTarget"))
         {
-            ScoreBehavior.UpdateScore(500);
+            ScoreBehavior.UpdateScore(1);
         }
         else if (collision.gameObject.name == "right")
         {
@@ -31,8 +31,9 @@ public class controllerHit : MonoBehaviour
         }
         else
         {
-            ScoreBehavior.UpdateScore(-250);
+            HealthBehavior.UpdateHealth();
         }
     }
+
 }
 

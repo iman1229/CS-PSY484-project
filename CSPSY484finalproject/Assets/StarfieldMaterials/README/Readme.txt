@@ -1,9 +1,11 @@
-Thanks for buying this,
+The program will ask which eye is weaker. Once answered it will set an algorithm towards the weaker side and set up an interval time with targets. 
 
-There is a selection of image files in the "Textures" folder, you can add these to newly made materials or edit the demo ones I've added in the "Materials" folder.
+Controls – Point and slap the targets. Trigger button is going to be on your index finger select option. 
 
-There is a simple demo script to illustrate the ability to layer these materials to create depth. 
+BLUE SQUARE – HIT
+LAVA SPHERE – DO NOT HIT (Health/Life Deduction if hit)
+LIFE-POINTS - TEN
 
-Please keep this asset library updated, if there are any changes or fixes or additions to make, I'd like you to have them.
+It is best to not hit the blue squares if they are jumbled alongside with the Lava Balls. It is okay to ignore them as you will not be penalized for not hitting targets but only hitting the Lava Balls. 
 
-support@dilapidatedmeow.com if you need help applying them, however I cannot help with scripting related issues, only problems with the assets. 
+Fifty-Points accumulated; you win the game. 
